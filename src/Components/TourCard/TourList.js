@@ -9,9 +9,9 @@ const TourList = props => {
 
     return (
         <div>
-            {TourData.map(tour => <TourCard img={tour.imgSrc} location={tour.location} info={tour.information} />)}
+            {TourData.map(tour => <TourCard img={tour.imgSrc} location={tour.location} info={tour.information} cost={tour.price} />)}
         </div>
     )
-}
+} 
 
 export default TourList;
