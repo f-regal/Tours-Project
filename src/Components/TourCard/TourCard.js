@@ -1,29 +1,12 @@
 import styles from './TourCard.module.css'
-import React from 'react'
+import React, {useState} from 'react'
 
 
 const TourCard = props => {
 
-    let content = props.info;
-    let shorterContent = content.substring(0, 250);
-
-    const showMore = () => {
-        
-
-    }
-
-    let tooLong = true;
-    let readMore = <a href="#" onClick={showMore}>ReadMore</a>;
-
-
-    if (content.length <= 250) {
-        tooLong = false;
-    } else if (content.length > 251) {
-        tooLong = true;
-    }
-
-    
-
+    let contentInfo = props.info;
+    const [readMore, setReadMore] = useState(false);
+    //MAY NEED TO USE REFS TO DELETE PARTICULAR TOURS FROM LIST USING AN ID
 
     return (
         <div className={styles.container}>
@@ -34,8 +17,11 @@ const TourCard = props => {
                     <h4><b>{props.location}</b></h4>
                     <h4><b>{props.cost}</b></h4>
                 </div>
-                {tooLong = true && <p>{shorterContent}{readMore}</p>}
-                {tooLong = false && <p>{content}</p>}
+                {readMore ? contentInfo : `${contentInfo.substring(0, 250)}...`}
+                <button className={styles.ReadMoreShowLess} onClick={() => {setReadMore(!readMore)}}>{readMore ? 'Show Less' : 'Read More'}</button>
+            </div>
+            <div className={styles.notInterested}>
+                <button className={styles.notInterestedBtn} onClick={props.removeTour}>Not Interested</button>
             </div>
         </div>
         </div>
