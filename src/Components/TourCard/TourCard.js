@@ -6,8 +6,7 @@ const TourCard = props => {
 
     let contentInfo = props.info;
     const [readMore, setReadMore] = useState(false);
-    //MAY NEED TO USE REFS TO DELETE PARTICULAR TOURS FROM LIST USING AN ID
-
+    
     return (
         <div className={styles.container}>
             <div className={styles.card}>

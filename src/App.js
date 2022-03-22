@@ -1,4 +1,4 @@
-import './App.css';
+import styles from './App.css'
 import TourList from './Components/TourCard/TourList';
 import Logo from './Components/TourCard/istanbul.jpg'
 import Logo1 from './Components/TourCard/dubainew.jpg'
@@ -31,6 +31,7 @@ const TourLocations =
 
 
 function App() {
+
   return (
     <div className="App">
       <h1>Our Tours</h1>
